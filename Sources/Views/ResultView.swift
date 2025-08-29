@@ -118,8 +118,17 @@ struct ResultView: View {
                 
                 // ボタン
                 Button(action: {
-                    // 広告表示後に確実に初期画面（メニュー）に戻る
-                    AdsManager.shared.showInterstitialAndReturnToRoot()
+                    // 広告表示後にホームに戻る
+                    if let topVC = UIApplication.topViewController() {
+                        AdsManager.shared.show(from: topVC)
+                        #if DEBUG
+                        print("[Ads] Show interstitial from result screen button")
+                        #endif
+                    }
+                    // 広告の有無に関わらずホームに戻る
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        dismiss()
+                    }
                 }) {
                     Text("最初に戻る")
                         .font(.headline)

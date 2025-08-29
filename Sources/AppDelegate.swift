@@ -14,6 +14,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             print("[Ads] GoogleMobileAds started (RELEASE - production ads)")
             #endif
         })
+        // 序盤にプリロードしておく
+        AdsManager.shared.preload()
         #endif
         return true
     }
