@@ -1,41 +1,46 @@
 import Foundation
 
 enum QuizTopic: CaseIterable, Identifiable {
-    case coordinator1, coordinator2
-    case health1, health2
-    case counseling1, counseling2
-    case environment1, environment2
-    case welfare1, welfare2
+    case agingSociety
+    case housingImportance
+    case homeCareServices
+    case elderlyHealth
+    case disabilitySupport
+    case barrierFreeDesign
+    case welfareEquipment
+    case housingImprovement
+    case dailyLiving
+    case communityDevelopment
 
     var id: String { fileName }
 
     var title: String {
         switch self {
-        case .coordinator1:   return "福祉住環境コーディネーターの役割 1"
-        case .coordinator2:   return "福祉住環境コーディネーターの役割 2"
-        case .health1:        return "疾患・障害別住環境整備 1"
-        case .health2:        return "疾患・障害別住環境整備 2"
-        case .counseling1:    return "相談援助技術 1"
-        case .counseling2:    return "相談援助技術 2"
-        case .environment1:   return "住環境整備の技術 1"
-        case .environment2:   return "住環境整備の技術 2"
-        case .welfare1:       return "福祉用具の活用 1"
-        case .welfare2:       return "福祉用具の活用 2"
+        case .agingSociety:        return "少子高齢社会の現状と共生社会"
+        case .housingImportance:   return "福祉住環境整備の重要性・必要性"
+        case .homeCareServices:    return "在宅生活と介護サービス"
+        case .elderlyHealth:       return "高齢者の健康と自立"
+        case .disabilitySupport:   return "障害者の生活の不自由を克服する道"
+        case .barrierFreeDesign:   return "バリアフリーとユニバーサルデザインを考える"
+        case .welfareEquipment:    return "生活を支える福祉用具"
+        case .housingImprovement:  return "住まいの整備のための基本技術"
+        case .dailyLiving:         return "生活行為別に見る安全・安心・快適な住まい"
+        case .communityDevelopment: return "安心して暮らせる住まいとまちづくり"
         }
     }
 
     var fileName: String {
         switch self {
-        case .coordinator1:   return "coordinator_1"
-        case .coordinator2:   return "coordinator_2"
-        case .health1:        return "health_1"
-        case .health2:        return "health_2"
-        case .counseling1:    return "counseling_1"
-        case .counseling2:    return "counseling_2"
-        case .environment1:   return "environment_1"
-        case .environment2:   return "environment_2"
-        case .welfare1:       return "welfare_1"
-        case .welfare2:       return "welfare_2"
+        case .agingSociety:        return "category1_aging_society"
+        case .housingImportance:   return "category2_housing_importance"
+        case .homeCareServices:    return "category3_home_care_services"
+        case .elderlyHealth:       return "category4_elderly_health"
+        case .disabilitySupport:   return "category5_disability_support"
+        case .barrierFreeDesign:   return "category6_barrier_free_design"
+        case .welfareEquipment:    return "category7_welfare_equipment"
+        case .housingImprovement:  return "category8_housing_improvement"
+        case .dailyLiving:         return "category9_daily_living"
+        case .communityDevelopment: return "category10_community_development"
         }
     }
 }

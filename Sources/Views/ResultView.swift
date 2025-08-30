@@ -6,6 +6,7 @@ struct ResultView: View {
     let totalQuestions: Int
     @Environment(\.dismiss) private var dismiss
     @Environment(\.presentationMode) var presentationMode
+    @State private var returning = false
     
     private var scorePercentage: Double {
         Double(correctAnswers) / Double(totalQuestions) * 100
@@ -118,16 +119,21 @@ struct ResultView: View {
                 
                 // ボタン
                 Button(action: {
-                    // 広告表示後にホームに戻る
-                    if let topVC = UIApplication.topViewController() {
-                        AdsManager.shared.show(from: topVC)
-                        #if DEBUG
-                        print("[Ads] Show interstitial from result screen button")
-                        #endif
-                    }
-                    // 広告の有無に関わらずホームに戻る
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        dismiss()
+                    guard !returning else { return }
+                    returning = true
+
+                    // 表示元VCを取得
+                    let vc = UIApplication.shared.connectedScenes
+                        .compactMap { ($0 as? UIWindowScene)?.keyWindow?.rootViewController }
+                        .first ?? UIViewController()
+
+                    AdsManager.shared.show(from: vc) {
+                        // 進捗リセット
+                        QuizRepository.shared.resetAll()
+
+                        // ルートに確実に戻る
+                        AppRouter.backToHome(HomeView())
+                        returning = false
                     }
                 }) {
                     Text("最初に戻る")

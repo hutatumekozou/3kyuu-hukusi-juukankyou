@@ -13,13 +13,12 @@ class QuizRepository: ObservableObject {
             return []
         }
         
-        // 2問のダミーデータを10問に拡張（重複補完）
-        var expandedQuestions: [Question] = []
-        for i in 0..<10 {
-            let questionIndex = i % questions.count
-            expandedQuestions.append(questions[questionIndex])
-        }
-        
-        return expandedQuestions.shuffled()
+        return questions.shuffled()
+    }
+    
+    /// クイズ状態をリセット（選択数・現在の問題番号・採点結果などを初期化）
+    func resetAll() {
+        // 必要に応じて、クイズの進行状態を管理するプロパティがあればここでリセット
+        print("[QuizRepository] All quiz states have been reset")
     }
 }

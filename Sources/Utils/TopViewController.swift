@@ -1,24 +1,28 @@
 import UIKit
-import SwiftUI
 
-struct TopViewController: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> UIViewController {
-        return UIViewController()
+enum TopViewController {
+    static func topMost(base: UIViewController? = UIApplication.shared
+        .connectedScenes
+        .compactMap { ($0 as? UIWindowScene)?.keyWindow }
+        .first?.rootViewController) -> UIViewController {
+        if let nav = base as? UINavigationController {
+            return topMost(base: nav.visibleViewController)
+        }
+        if let tab = base as? UITabBarController, let selected = tab.selectedViewController {
+            return topMost(base: selected)
+        }
+        if let presented = base?.presentedViewController {
+            return topMost(base: presented)
+        }
+        return base ?? UIViewController()
     }
-    
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
-    
-    static func getTopViewController() -> UIViewController? {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let window = windowScene.windows.first else {
-            return nil
-        }
-        
-        var topViewController = window.rootViewController
-        while let presentedViewController = topViewController?.presentedViewController {
-            topViewController = presentedViewController
-        }
-        
-        return topViewController
+
+    static func popToRoot(animated: Bool = true) {
+        guard let nav = topMost().navigationController ??
+                (UIApplication.shared.connectedScenes
+                    .compactMap { ($0 as? UIWindowScene)?.keyWindow }
+                    .first?.rootViewController as? UINavigationController)
+        else { return }
+        nav.popToRootViewController(animated: animated)
     }
 }

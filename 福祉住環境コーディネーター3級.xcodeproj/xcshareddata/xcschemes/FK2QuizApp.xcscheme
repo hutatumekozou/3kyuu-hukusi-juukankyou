@@ -17,7 +17,7 @@
                BlueprintIdentifier = "001T"
                BuildableName = "&#x798f;&#x7949;&#x4f4f;&#x74b0;&#x5883;&#x30b3;&#x30fc;&#x30c6;&#x3099;&#x30a3;&#x30cd;&#x30fc;&#x30bf;&#x30fc;2&#x7d1a;.app"
                BlueprintName = "&#x798f;&#x7949;&#x4f4f;&#x74b0;&#x5883;&#x30b3;&#x30fc;&#x30c6;&#x3099;&#x30a3;&#x30cd;&#x30fc;&#x30bf;&#x30fc;2&#x7d1a;"
-               ReferencedContainer = "container:&#x798f;&#x7949;&#x4f4f;&#x74b0;&#x5883;&#x30b3;&#x30fc;&#x30c6;&#x3099;&#x30a3;&#x30cd;&#x30fc;&#x30bf;&#x30fc;2&#x7d1a;.xcodeproj">
+               ReferencedContainer = "container:&#x798f;&#x7949;&#x4f4f;&#x74b0;&#x5883;&#x30b3;&#x30fc;&#x30c6;&#x3099;&#x30a3;&#x30cd;&#x30fc;&#x30bf;&#x30fc;3&#x7d1a;.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -66,6 +66,15 @@
             ReferencedContainer = "container:&#x798f;&#x7949;&#x4f4f;&#x74b0;&#x5883;&#x30b3;&#x30fc;&#x30c6;&#x3099;&#x30a3;&#x30cd;&#x30fc;&#x30bf;&#x30fc;2&#x7d1a;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "001T"
+            BuildableName = "&#x798f;&#x7949;&#x4f4f;&#x74b0;&#x5883;&#x30b3;&#x30fc;&#x30c6;&#x3099;&#x30a3;&#x30cd;&#x30fc;&#x30bf;&#x30fc;2&#x7d1a;.app"
+            BlueprintName = "&#x798f;&#x7949;&#x4f4f;&#x74b0;&#x5883;&#x30b3;&#x30fc;&#x30c6;&#x3099;&#x30a3;&#x30cd;&#x30fc;&#x30bf;&#x30fc;2&#x7d1a;"
+            ReferencedContainer = "container:&#x798f;&#x7949;&#x4f4f;&#x74b0;&#x5883;&#x30b3;&#x30fc;&#x30c6;&#x3099;&#x30a3;&#x30cd;&#x30fc;&#x30bf;&#x30fc;2&#x7d1a;.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
