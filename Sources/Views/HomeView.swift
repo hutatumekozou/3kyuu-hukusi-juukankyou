@@ -6,11 +6,11 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                // グラデーション背景
+                // 薄い黄色のグラデーション背景
                 LinearGradient(
                     gradient: Gradient(colors: [
-                        Color(red: 0.6, green: 0.8, blue: 1.0),
-                        Color(red: 0.4, green: 0.6, blue: 0.9)
+                        Color(red: 1.0, green: 0.98, blue: 0.8),
+                        Color(red: 1.0, green: 0.95, blue: 0.7)
                     ]),
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
@@ -25,7 +25,7 @@ struct HomeView: View {
                             .fontWeight(.bold)
                             .foregroundColor(.black)
                         
-                        Text("コーディネーター2級")
+                        Text("コーディネーター3級")
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundColor(.black)
