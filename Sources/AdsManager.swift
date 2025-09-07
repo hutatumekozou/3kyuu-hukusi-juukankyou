@@ -10,7 +10,7 @@ final class AdsManager: NSObject, GADFullScreenContentDelegate {
         #if DEBUG
         let unitID = "ca-app-pub-3940256099942544/4411468910"
         #else
-        let unitID = "ca-app-pub-8365176591962448/3970919969"
+        let unitID = "ca-app-pub-8365176591962448/2878551334"
         #endif
         GADInterstitialAd.load(withAdUnitID: unitID, request: GADRequest()) { [weak self] ad, err in
             DispatchQueue.main.async {

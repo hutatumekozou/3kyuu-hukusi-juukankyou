@@ -28,18 +28,7 @@ struct ResultView: View {
     }
     
     private var illustrationColor: Color {
-        switch scorePercentage {
-        case 81...100:
-            return Color.green
-        case 61...80:
-            return Color.blue
-        case 41...60:
-            return Color.orange
-        case 21...40:
-            return Color.purple
-        default: // 0-20%
-            return Color.pink
-        }
+        return Color.pink
     }
     
     var body: some View {
@@ -93,22 +82,11 @@ struct ResultView: View {
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
                     
-                    // 女性のイラスト
-                    if let uiImage = UIImage(named: "woman_illustration") ?? 
-                       UIImage(contentsOfFile: Bundle.main.path(forResource: "woman_illustration", ofType: "png") ?? "") ?? 
-                       UIImage(contentsOfFile: "/Users/kukkiiboy/Desktop/Claude code/FK2QuizApp/Resources/Assets/woman_illustration.png") {
-                        Image(uiImage: uiImage)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 200, height: 200)
-                            .clipShape(RoundedRectangle(cornerRadius: 15))
-                    } else {
-                        // フォールバック用のSF Symbol
-                        Image(systemName: "figure.seated.side")
-                            .font(.system(size: 120))
-                            .foregroundColor(illustrationColor)
-                            .frame(width: 200, height: 200)
-                    }
+                    // ピンクのハート
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 120))
+                        .foregroundColor(.pink)
+                        .frame(width: 200, height: 200)
                 }
                 .padding()
                 .background(Color.white.opacity(0.9))
